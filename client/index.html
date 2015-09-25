@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app='packrat'>
+  <head>
+    <meta charset="utf-8" />
+    <title>PAK RAT</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <header class="header">
+        <div class="header-content">
+          <button class="login">Log In</button>
+          <button class="signup">Sign Up</button>
+          <div class="logo">
+            <img class="rat" float="left" height="100px" width="auto" src="assets/img/packrat.png">
+            <h1>PAK RAT</h1>
+          </div>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#/closet">MY GEAR</a></li>
+            <li><a href="#/pack">PACK A NEW PACK</a></li>
+            <li><a href="#/packs">MY PACKS</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="main">
+        <div ng-view></div>
+      </div>
+
+      <footer>
+        <img class="icon" width="200px" height="auto" align="center" src="assets/img/mountain.png">
+      </footer>
+
+    </div>
+
+    <!-- vendor dependencies -->
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+    <!-- app module-->
+    <script src="app/app.js"></script>
+    <!-- app views -->
+    <script src="app/gear/gear.js"></script>
+    <!-- services -->
+    <script src="app/services/services.js"></script>
+  </body>
+</html>
