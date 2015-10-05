@@ -1,0 +1,31 @@
+<div class="container">
+  <!-- <h2>Add New Gear</h2> -->
+  <div class="add-item">
+    <form class="add-item-form">
+      <input type="text" ng-model="item.name" placeholder="item name">
+      <input type="text" ng-model="item.type" placeholder="type">
+      <input type="text" ng-model="item.weight" placeholder="weight">
+      <input type="text" ng-model="item.category" placeholder="category">
+      <button type="submit" ng-click="addItem()">Store It</button>
+    </form>
+  </div>
+
+  <div class="item-list">
+    <h2>My Gear Closet</h2>
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Type</th>
+        <th>Weight</th>
+        <th>Category</th>
+      </tr>
+      <tr ng-repeat= "item in vm.gearList">
+        <td class="itemname">{{item.name}}</td>
+        <td>{{item.type}}</td>
+        <td>{{item.weight}}</td>
+        <td>{{item.category}}</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
