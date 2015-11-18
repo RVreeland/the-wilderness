@@ -13,7 +13,9 @@ function configure($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('gearlist', {
       url: '/gearlist',
-      templateUrl: 'app/components/gearlist/gearlistView.html'
+      templateUrl: 'app/components/gearlist/gearlistView.html',
+      controller: 'Gearlist',
+      controllerAs: 'vm'
     })
     .state('newpack', {
       url: '/newpack',

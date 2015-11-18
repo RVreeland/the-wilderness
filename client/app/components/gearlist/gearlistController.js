@@ -9,7 +9,8 @@
 
     function Gearlist() {
       var vm = this;
-      var gearList = [];
+      //mock data
+      vm.gear = [{name: 'Marmot Limelight 1', type: 'tent', category: 'shelter', weight: '5 lbs'}];
 
     }
 
