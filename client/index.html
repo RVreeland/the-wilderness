@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app='packrat'>
+<html lang="en" data-ng-app="app" ng-strict-di>
   <head>
     <meta charset="utf-8" />
     <title>PAK RAT</title>
@@ -20,15 +20,16 @@
 
         <nav>
           <ul>
-            <li><a href="#/closet">MY GEAR</a></li>
-            <li><a href="#/pack">PACK A NEW PACK</a></li>
-            <li><a href="#/packs">MY PACKS</a></li>
+            <li><a ui-sref="gearlist">MY GEAR</a></li>
+            <li><a ui-sref="newpack">PACK A NEW PACK</a></li>
+            <li><a ui-sref="packlist">MY PACKS</a></li>
           </ul>
         </nav>
       </header>
 
       <div class="main">
-        <div ng-view></div>
+        <h1>Stuff Should Show Up:</h1>
+        <div ui-view></div>
       </div>
 
       <footer>
@@ -38,15 +39,16 @@
     </div>
 
     <!-- vendor dependencies -->
-    <script src="lib/angular/angular.min.js"></script>
-    <script src="lib/angular-route/angular-route.js"></script>
-    <script src="https://cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- app module-->
     <script src="app/app.module.js"></script>
-    <!-- app views -->
-    <script src="app/components/gearlist/gearlistController.js"></script>
-    <!-- services -->
-    <!-- // <script src="app/services/services.js"></script> -->
+
+    <script src="app/components/home/home.module.js"></script>
+    <script src="app/components/gearlist/gearlist.module.js"></script>
+    <script src="app/components/newpack/newpack.module.js"></script>
+    <script src="app/components/packlist/packlist.module.js"></script>
+    <script src="app/route-config.js"></script>
+
   </body>
 </html>
