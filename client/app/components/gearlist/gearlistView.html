@@ -1,6 +1,6 @@
-<div class="container">
+<!-- <div class="container"> -->
   <!-- <h2>Add New Gear</h2> -->
-  <div class="add-item">
+<!--   <div class="add-item">
     <form class="add-item-form">
       <input type="text" ng-model="item.name" placeholder="item name">
       <input type="text" ng-model="item.type" placeholder="type">
@@ -8,9 +8,87 @@
       <input type="text" ng-model="item.category" placeholder="category">
       <button type="submit" ng-click="addItem()">Store It</button>
     </form>
-  </div>
+  </div> -->
+<div class="container-fluid gearlist-container">
+  <div class="row-fluid">
+    <div class="col-md-4">
+      <form class="form-horizontal">
+        <fieldset>
+          <legend class="col-md-9 col-md-offset-3">
+            <h2>New Item</h2>
+          </legend>
+          <div class="form-group">
+            <label for="item-name" class="col-md-3 control-label">Item Name</label>
+            <div class="col-md-9">
+              <input type="text" class="form-control" id="item-name" placeholder="Marmot Limelight2">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="item-type" class="col-md-3 control-label">Type</label>
+            <div class="col-md-9">
+              <input type="text" class="form-control" id="item-type" placeholder="tent">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="notes" class="col-md-3 control-label">Notes</label>
+            <div class="col-md-9">
+              <textarea class="form-control" rows="3" id="notes"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="item-category" class="col-md-3 control-label">Category</label>
+            <div class="col-md-9">
+              <select class="form-control" id="item-category">
+                <option>shelter</option>
+                <option>clothing</option>
+                <option>kitchen</option>
+                <option>sleep</option>
+                <option>other</option>
+              </select>
+              <br>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-9 col-lg-offset-3">
+              <button type="reset" class="btn btn-default">Cancel</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
 
-  <div class="item-list">
+    </div>
+
+    <div class="col-md-8">
+      <h2>My Gear Closet</h2>
+      <table class="table table-striped table-hover ">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Type</th>
+            <th>Weight</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat= "item in vm.gear">
+            <td>{{$index+1}}</td>
+            <td class="itemname">{{item.name}}</td>
+            <td>{{item.type}}</td>
+            <td>{{item.weight}}</td>
+            <td>{{item.category}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- <div class="item-list">
     <h2>My Gear Closet</h2>
     <table>
       <tr>
@@ -26,6 +104,6 @@
         <td>{{item.category}}</td>
       </tr>
     </table>
-  </div>
+  </div> -->
 
-</div>
+<!-- </div> -->
