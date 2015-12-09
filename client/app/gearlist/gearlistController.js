@@ -5,14 +5,12 @@
     .module('app.gearlist')
     .controller('GearlistController', GearlistController);
 
-  GearlistController.$inject = [];
+  GearlistController.$inject = ['dataService'];
 
-  function GearlistController() {
+  function GearlistController(dataService) {
     var vm = this;
-    //mock data
-    vm.gear = [{name: 'Marmot Limelight 2', type: 'tent', category: 'shelter', weight: '80'},
-    {name: 'Olicamp Light', type: 'stove', category: 'kitchen', weight: '2.5'},
-    {name: 'Patagonia down jacket', type: 'jacket', category: 'clothing', weight: '12'}];
+    //mock data from dataservice
+    vm.gear = dataService.getGearlist();
 
     vm.item = {
       name: '',
@@ -23,8 +21,9 @@
 
     vm.categories = ['shelter', 'sleep', 'kitchen', 'clothing', 'other'];
 
-    vm.addItem = function() {
-      vm.gear.push(vm.item);
+    vm.addItemToGearlist = function() {
+      dataService.addItem();
+      vm.gear = dataService.getGearlist();
       vm.item = {};
     };
 

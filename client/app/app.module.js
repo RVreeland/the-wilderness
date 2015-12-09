@@ -6,6 +6,7 @@
     'app.gearlist',
     'app.newpack',
     'app.packlist',
+    'app.dataservice',
     'ui.router'
   ]);
 
