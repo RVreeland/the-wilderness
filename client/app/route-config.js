@@ -14,7 +14,7 @@
       .state('gearlist', {
         url: '/gearlist',
         templateUrl: 'app/gearlist/gearlistView.html',
-        controller: 'Gearlist',
+        controller: 'GearlistController',
         controllerAs: 'vm'
       })
       .state('newpack', {
