@@ -22,8 +22,7 @@
     vm.categories = ['shelter', 'sleep', 'kitchen', 'clothing', 'other'];
 
     vm.addItemToGearlist = function() {
-      dataService.addItem();
-      vm.gear = dataService.getGearlist();
+      dataService.addItem(vm.item);
       vm.item = {};
     };
 
