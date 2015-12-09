@@ -3,13 +3,13 @@
 
   angular
     .module('app.newpack')
-    .controller('NewPack', NewPack);
+    .controller('NewPackController', NewPackController);
 
-    NewPack.$inject = [];
+  NewPackController.$inject = [];
 
-    function NewPack() {
-      var vm = this;
+  function NewPackController() {
+    var vm = this;
 
-    }
+  }
 
 })();

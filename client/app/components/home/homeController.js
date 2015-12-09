@@ -3,12 +3,12 @@
 
   angular
     .module('app.home')
-    .controller('Home', Home);
+    .controller('HomeController', HomeController);
 
-    Home.$inject = [];
+  HomeController.$inject = [];
 
-    function Home() {
-      var vm = this;
-    }
+  function HomeController() {
+    var vm = this;
+  }
 
 })();

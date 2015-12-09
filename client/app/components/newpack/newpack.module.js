@@ -1,5 +1,5 @@
 (function() {
-    'use strict';
-
-    angular.module('app.newpack', []);
+  'use strict';
+  
+  angular.module('app.newpack', []);
 })();
