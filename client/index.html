@@ -3,15 +3,71 @@
   <head>
     <meta charset="utf-8" />
     <title>PAK RAT</title>
-    <link rel="stylesheet" type="text/css" href="assets/styles/style.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="assets/styles/style.css" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha256-Ay17X/itZzhUFkDfLB9MICE7tbVwtPuFhcwDpABdbEA= sha512-eTtl6Aa3v8DrTCYWH7cAfXt6QW8DpsFn0hdCcYIWe6VDMyPMikXBWd/9bZR5YZNrmHBBu4KGdVgfPs1aEEgVIw==" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/custom.css">
   </head>
   <body>
-    <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <img class="navbar-brand rat" src="assets/img/packrat.png"> -->
+          <a class="navbar-brand" ui-sref="home">PakRat</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a ui-sref="gearlist">My Gear</a></li>
+            <li><a ui-sref="packlist">My Packs</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div ui-view></div>
+
+    <footer>
+      <div class="container">
+        <!-- <p class="text-muted">PakRat</p> -->
+        <img class="mountain center-block" src="assets/img/mountain.png">
+      </div>
+    </footer>
+ <!--    <div class="wrapper">
 
       <header class="header">
         <div class="header-content">
-<!--           <button class="login">Log In</button>
-          <button class="signup">Sign Up</button> -->
           <div class="logo">
             <img class="rat" src="assets/img/packrat.png">
             <h1>PAK RAT</h1>
@@ -36,23 +92,26 @@
         <img class="icon" width="200px" height="auto" align="center" src="assets/img/mountain.png">
       </footer>
 
-    </div>
+    </div> -->
 
     <!-- vendor dependencies -->
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+
+
     <!-- app module-->
     <script src="app/app.module.js"></script>
+    <script src="app/services/dataservice.js"></script>
 
-    <script src="app/components/home/home.module.js"></script>
-    <script src="app/components/gearlist/gearlist.module.js"></script>
-    <script src="app/components/gearlist/gearlistController.js"></script>
-    <script src="app/components/newpack/newpack.module.js"></script>
-    <script src="app/components/newpack/newpackController.js"></script>
-    <script src="app/components/packlist/packlist.module.js"></script>
-    <script src="app/components/packlist/packlistController.js"></script>
-    <script src="app/components/home/home.module.js"></script>
-    <script src="app/components/home/homeController.js"></script>
+    <script src="app/home/home.module.js"></script>
+    <script src="app/gearlist/gearlist.module.js"></script>
+    <script src="app/gearlist/gearlistController.js"></script>
+    <script src="app/newpack/newpack.module.js"></script>
+    <script src="app/newpack/newpackController.js"></script>
+    <script src="app/packlist/packlist.module.js"></script>
+    <script src="app/packlist/packlistController.js"></script>
+    <script src="app/home/home.module.js"></script>
+    <script src="app/home/homeController.js"></script>
     <script src="app/route-config.js"></script>
 
   </body>
