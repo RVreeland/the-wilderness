@@ -19,7 +19,9 @@
       })
       .state('newpack', {
         url: '/newpack',
-        templateUrl: 'app/newpack/newpackView.html'
+        templateUrl: 'app/newpack/newpackView.html',
+        controller: 'NewPackController',
+        controllerAs: 'vm'
       })
       .state('packlist', {
         url: '/packlist',

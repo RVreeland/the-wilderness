@@ -5,10 +5,13 @@
     .module('app.newpack')
     .controller('NewPackController', NewPackController);
 
-  NewPackController.$inject = [];
+  NewPackController.$inject = ['dataService'];
 
-  function NewPackController() {
+  function NewPackController(dataService) {
     var vm = this;
+
+    vm.gear = dataService.getGearlist();
+
 
   }
 
