@@ -14,9 +14,12 @@
     {name: 'Olicamp Light', type: 'stove', category: 'kitchen', weight: '2.5'},
     {name: 'Patagonia down jacket', type: 'jacket', category: 'clothing', weight: '12'}];
 
+    var packs = [];
+
     return {
       getGearlist: getGearlist,
-      addItem: addItem
+      addItem: addItem,
+      saveNewPack: saveNewPack
     };
 
     //returns mock data
@@ -26,6 +29,10 @@
     //pushes to mock data
     function addItem(item) {
       gearList.push(item);
+    }
+
+    function saveNewPack(pack) {
+      packs.push(pack);
     }
   }
 
