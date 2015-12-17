@@ -16,6 +16,7 @@
     vm.pack = {};
 
     vm.createPack = function() {};
+    vm.packCreated = false;
 
 
   }
