@@ -12,6 +12,11 @@
 
     vm.gear = dataService.getGearlist();
 
+    //properties: name, season
+    vm.pack = {};
+
+    vm.createPack = function() {};
+
 
   }
 
