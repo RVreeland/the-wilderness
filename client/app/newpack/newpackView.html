@@ -28,6 +28,7 @@
     </form>
   </div>
 
+
   <!-- when $scope.myValue is truthy (element is visible) -->
   <div ng-show="vm.packCreated">
     <div class="col-md-12" id="now-packing">
@@ -35,8 +36,17 @@
       <h2>Base Weight: {{vm.packWeight.lbs}} lbs. {{vm.packWeight.oz}} oz.</h2>
     </div>
 
+
     <div class="col-md-6">
       <h2>My Gear Closet</h2>
+
+      <div class="alert alert-warning alert-dismissible fade in" role="alert" ng-show="vm.inPack">
+        <button type="button" class="close" ng-click="vm.inPack = false">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        That item is alredy in your pack!
+      </div>
+      
       <table class="table table-striped table-hover ">
         <thead>
           <tr>

@@ -13,7 +13,7 @@
     vm.gear = dataService.getGearlist();
     //set initially to false
     vm.packCreated = true;
-
+    vm.inPack = false;
     //properties: name, season, weight, items
     //mock
     vm.pack = {
@@ -34,13 +34,17 @@
     };
 
     vm.addToPack = function(item) {
-      vm.pack.items[item.name] = item;
-      vm.pack.weight += parseFloat(item.weight);
-      // dataService.addItemToPack(item);
-      vm.packWeight = {
-        lbs: parseInt(vm.pack.weight/16),
-        oz: parseFloat(vm.pack.weight%16)
-      };
+      if (!vm.pack.items[item.name]) {
+        // dataService.addItemToPack(item);
+        vm.pack.weight += parseFloat(item.weight);
+        vm.pack.items[item.name] = item;
+        vm.packWeight = {
+          lbs: parseInt(vm.pack.weight/16),
+          oz: parseFloat(vm.pack.weight%16)
+        };
+      } else {
+        vm.inPack = true;
+      }
     };
 
     vm.removeFromPack = function(item) {
