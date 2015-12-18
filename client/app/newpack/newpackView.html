@@ -72,7 +72,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr data-ng-repeat= "item in vm.pack.items">
+          <tr data-ng-repeat= "item in vm.pack.items" ng-dblclick="vm.removeFromPack(item)">
             <td>{{$index+1}}</td>
             <td class="itemname">{{item.name}}</td>
             <td>{{item.type}}</td>
