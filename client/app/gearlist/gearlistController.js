@@ -9,12 +9,19 @@
 
   function GearlistController(dataService) {
     var vm = this;
+
+    vm.enterNewItem = enterNewItem;
+    vm.cancelNewItem = cancelNewItem;
+    vm.addItemToGearlist = addItemToGearlist;
+
     //mock data from dataservice
     vm.gear = dataService.getGearlist();
 
     vm.enterNew = false;
 
-    vm.enterNewItem = function() {
+    vm.categories = ['shelter', 'sleep', 'kitchen', 'clothing', 'other'];
+
+    function enterNewItem() {
       vm.newItem = {
         name: '',
         type: '',
@@ -22,21 +29,17 @@
         category: ''
       };
       vm.enterNew = true;
-    };
+    }
 
-    vm.cancelNewItem = function() {
+    function cancelNewItem() {
       vm.newItem = {};
       vm.enterNew = false;
-      console.log(vm.enterNew);
-    };
+    }
 
-
-    vm.categories = ['shelter', 'sleep', 'kitchen', 'clothing', 'other'];
-
-    vm.addItemToGearlist = function() {
+    function addItemToGearlist() {
       dataService.addItem(vm.newItem);
       vm.newItem = {};
-    };
+    }
 
   }
 
