@@ -12,18 +12,22 @@
     //mock data from dataservice
     vm.gear = dataService.getGearlist();
 
-    vm.item = {
-      name: '',
-      type: '',
-      notes: '',
-      category: ''
+    vm.enterNewItem = function() {
+      vm.newItem = {
+        name: '',
+        type: '',
+        notes: '',
+        category: ''
+      };
+      vm.enterNew = true;
     };
+
 
     vm.categories = ['shelter', 'sleep', 'kitchen', 'clothing', 'other'];
 
     vm.addItemToGearlist = function() {
-      dataService.addItem(vm.item);
-      vm.item = {};
+      dataService.addItem(vm.newItem);
+      vm.newItem = {};
     };
 
   }
