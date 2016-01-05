@@ -15,11 +15,17 @@
     vm.addItemToGearlist = addItemToGearlist;
 
     //mock data from dataservice
-    vm.gear = dataService.getGearlist();
-
+    vm.gear = []; 
     vm.enterNew = false;
-
     vm.categories = ['shelter', 'sleep', 'kitchen', 'clothing', 'other'];
+
+    activate();
+
+    ///////////
+
+    function activate() {
+      vm.gear = dataService.getGearlist();
+    }
 
     function enterNewItem() {
       vm.newItem = {
