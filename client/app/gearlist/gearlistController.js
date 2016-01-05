@@ -12,6 +12,8 @@
     //mock data from dataservice
     vm.gear = dataService.getGearlist();
 
+    vm.enterNew = false;
+
     vm.enterNewItem = function() {
       vm.newItem = {
         name: '',
@@ -20,6 +22,12 @@
         category: ''
       };
       vm.enterNew = true;
+    };
+
+    vm.cancelNewItem = function() {
+      vm.newItem = {};
+      vm.enterNew = false;
+      console.log(vm.enterNew);
     };
 
 
